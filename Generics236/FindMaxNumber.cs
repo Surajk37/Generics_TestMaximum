@@ -23,5 +23,21 @@ namespace Generics236
                 Console.WriteLine("\nThe maximum Integer number is : " + c);
             }
         }
+        public static double MaxFloat(double p, double q, double r)
+        {
+            if ((p.CompareTo(q) > 0) && (p.CompareTo(r) > 0))
+            {
+                return p;
+            }
+            else if ((q.CompareTo(p) > 0) && (q.CompareTo(r) > 0))
+            {
+                return q;
+            }
+            else
+            {
+                return r;
+            }
+        }
+
     }
 }
