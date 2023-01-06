@@ -9,7 +9,7 @@ namespace Generics
             Console.WriteLine("\t\t\t----------------------------\n\t\t\tWelcome To Generics Problems\n\t\t\t----------------------------\n");
             Console.WriteLine("\n\tPlease enter an option");
             Console.WriteLine("---------------------------------");
-            Console.WriteLine("1.Find maximum Integer number \n2.Find maximum Float number \n3.Find Maximum String Value \n4.Refactor 1 ");
+            Console.WriteLine("1.Find maximum Integer number \n2.Find maximum Float number \n3.Find Maximum String Value \n4.Refactor 1 \n5.Refactor 2 ");
             int option = Convert.ToInt32(Console.ReadLine());
 
             switch (option)             //Calling different methods using switch case
@@ -44,6 +44,7 @@ namespace Generics
                     Console.WriteLine("Maximum  String Value is : {0}", maxstring);
                     break;
                 case 4:
+                    //Generics Method
                     int maxint = FindMaxNumber.GenericFindMax<int>(23, 23, 43);
                     Console.WriteLine("\n\tMaximum Interger Value is {0}", maxint);
                     Console.WriteLine("\n");
@@ -54,6 +55,15 @@ namespace Generics
                     Console.WriteLine("----------------------------------------------------\n");
                     string maxstrings = FindMaxNumber.GenericFindMax<string>("Apple", "Peach","Banana"); 
                     Console.WriteLine("\n\tMaximum String Value is {0}", maxstrings);            //According to ascii value strings are compared with each other
+                    break;
+                case 5:
+                    //Generics Class
+                    int maxInt = FindMaxNumbers<int>.getMaximum(23, 43, 13);
+                    Console.WriteLine("\tMaximum Interger Value is {0}", maxInt+"\n");
+                    float maxFloat = FindMaxNumbers<float>.getMaximum(2.3f, 5.3f, 11.3f);
+                    Console.WriteLine("\tMaximum Float Value is {0}", maxFloat + "\n");
+                    string maxString = FindMaxNumbers<string>.getMaximum("Apple", "Peach", "Banana");
+                    Console.WriteLine("\tMaximum String Value is {0}", maxString);
                     break;
                 default:
                     Console.WriteLine("Please enter correct option");
