@@ -9,14 +9,14 @@ namespace Generics
             Console.WriteLine("\t\t\t----------------------------\n\t\t\tWelcome To Generics Problems\n\t\t\t----------------------------\n");
             Console.WriteLine("\n\tPlease enter an option");
             Console.WriteLine("---------------------------------");
-            Console.WriteLine("1.Find maximum Integer number \n2.Find maximum Float number \n3.Find Maximum String Value ");
+            Console.WriteLine("1.Find maximum Integer number \n2.Find maximum Float number \n3.Find Maximum String Value \n4.Refactor 1 ");
             int option = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("\nEnter Three Values");
 
             switch (option)             //Calling different methods using switch case
             {
                 case 1:
                     int a,b, c;
+                    Console.WriteLine("\nEnter Three Interger Values");
                     a = Convert.ToInt32(Console.ReadLine());
                     b = Convert.ToInt32(Console.ReadLine());
                     c = Convert.ToInt32(Console.ReadLine());
@@ -24,7 +24,8 @@ namespace Generics
                     FindMaxNumber.MaxInt(a,b,c);
                     break;
                 case 2:
-                    double p,q,r; 
+                    double p,q,r;
+                    Console.WriteLine("\nEnter Three Float Values");
                     p = Convert.ToDouble(Console.ReadLine());
                     q = Convert.ToDouble(Console.ReadLine());
                     r = Convert.ToDouble(Console.ReadLine());
@@ -34,12 +35,25 @@ namespace Generics
                     break;
                 case 3:
                     string x,y,z;
+                    Console.WriteLine("\nEnter Three String Values");
                     x = Console.ReadLine();
                     y = Console.ReadLine();
                     z = Console.ReadLine();
                     Console.WriteLine("x = {0}\t y = {1}\t z = {2} ", x, y, z);
                     string maxstring = FindMaxNumber.MaxString(x, y, z);
                     Console.WriteLine("Maximum  String Value is : {0}", maxstring);
+                    break;
+                case 4:
+                    int maxint = FindMaxNumber.GenericFindMax<int>(23, 23, 43);
+                    Console.WriteLine("\n\tMaximum Interger Value is {0}", maxint);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("----------------------------------------------------\n");
+                    float maxfloat = FindMaxNumber.GenericFindMax<float>(23.6f, 40.3f, 60.6f);
+                    Console.WriteLine("\n\tMaximum Float Value is {0}",maxfloat);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("----------------------------------------------------\n");
+                    string maxstrings = FindMaxNumber.GenericFindMax<string>("Apple", "Peach","Banana"); 
+                    Console.WriteLine("\n\tMaximum String Value is {0}", maxstrings);            //According to ascii value strings are compared with each other
                     break;
                 default:
                     Console.WriteLine("Please enter correct option");
